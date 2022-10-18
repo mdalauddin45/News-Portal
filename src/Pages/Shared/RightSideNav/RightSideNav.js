@@ -10,6 +10,7 @@ import {
   FaWhatsapp,
   FaTwitch,
 } from "react-icons/fa";
+import BrandCarusel from "../BrandCarusel/BrandCarusel";
 
 function RightSideNav() {
   return (
@@ -39,6 +40,9 @@ function RightSideNav() {
           </ListGroup.Item>
           <ListGroup.Item className="mt-2">Vestibulum at eros</ListGroup.Item>
         </ListGroup>
+      </div>
+      <div>
+        <BrandCarusel></BrandCarusel>
       </div>
     </div>
   );
