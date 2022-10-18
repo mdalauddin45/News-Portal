@@ -6,8 +6,9 @@ function LeftSideNav() {
   useEffect(() => {
     fetch(`http://localhost:5000/news-categories`)
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setCategories(data));
   }, []);
+  console.log(categories);
   return (
     <div>
       <h4>All Category</h4>
