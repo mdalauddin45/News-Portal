@@ -2,19 +2,10 @@ import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-
+// total_view,_id,author,rating,
 function News() {
   const news = useLoaderData();
-  const {
-    title,
-    details,
-    image_url,
-    total_view,
-    _id,
-    author,
-    rating,
-    category_id,
-  } = news;
+  const { title, details, image_url, category_id } = news;
   return (
     <Card>
       <Card.Img variant="top" src={image_url} />
