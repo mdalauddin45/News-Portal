@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ListGroup } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
@@ -10,13 +10,25 @@ import {
   FaWhatsapp,
   FaTwitch,
 } from "react-icons/fa";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import BrandCarusel from "../BrandCarusel/BrandCarusel";
 
 function RightSideNav() {
+  const { googlLogInWithPopUp } = useContext(AuthContext);
+  const handleGoogleLogin = () => {
+    googlLogInWithPopUp()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return (
     <div>
       <ButtonGroup vertical>
-        <Button variant="outline-primary">
+        <Button onClick={handleGoogleLogin} variant="outline-primary">
           <FaGoogle></FaGoogle> Log in With Google
         </Button>
         <Button className="mt-2" variant="outline-dark">
