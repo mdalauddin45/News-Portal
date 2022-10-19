@@ -25,7 +25,7 @@ const NewsSummaryCard = ({ news }) => {
           ></Image>
           <div>
             <p className="m-0">{author?.name}</p>
-            <p>{author?.published_date}</p>
+            <span>{author?.published_date}</span>
           </div>
         </div>
         <div>
@@ -43,7 +43,7 @@ const NewsSummaryCard = ({ news }) => {
               <Link to={`/news/${_id}`}>Read More..</Link>
             </p>
           ) : (
-            <p>{details} </p>
+            <span>{details} </span>
           )}
         </Card.Text>
       </Card.Body>
