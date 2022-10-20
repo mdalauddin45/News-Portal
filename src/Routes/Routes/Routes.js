@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import Main from "../../layout/Main";
 import Login from "../../Login/Login";
+import TermsAndConditions from "../../Others/TermsAndConditions";
 import Category from "../../Pages/Category/Category";
 import Home from "../../Pages/Home/Home";
 import News from "../../Pages/News/News";
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/terms",
+        element: <TermsAndConditions></TermsAndConditions>,
       },
     ],
   },

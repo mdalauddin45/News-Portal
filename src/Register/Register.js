@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [error, setError] = useState("");
@@ -49,9 +50,18 @@ const Register = () => {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" name="password" placeholder="Password" />
       </Form.Group>
-
+      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Check
+          type="checkbox"
+          label={
+            <>
+              Accept <Link to="/terms">Terms and TermsAndConditions</Link>
+            </>
+          }
+        />
+      </Form.Group>
       <Button variant="primary" type="submit">
-        Submit
+        Register
       </Button>
       {/* <Form.Text className="text-danger">
           We'll never share your email with anyone else.
