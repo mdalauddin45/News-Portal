@@ -8,9 +8,16 @@ import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import LeftSideNav from "../LeftSideNav/LeftSideNav";
 import { FaUser } from "react-icons/fa";
 import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
 
   return (
     <Navbar
@@ -42,7 +49,21 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
+            <Nav.Link href="#deets">
+              {user?.uid ? (
+                <>
+                  <span> {user?.displayName}</span>
+                  <Button variant="light" onClick={handleLogOut}>
+                    Log Out
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Link to="/login">Log in</Link>
+                  <Link to="/register">Register</Link>
+                </>
+              )}
+            </Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
               {user?.photoURL ? (
                 <Image
@@ -58,8 +79,6 @@ const Header = () => {
           <div className="d-lg-none">
             <LeftSideNav></LeftSideNav>
           </div>
-          <Link to="/login">Log in</Link>
-          <Link to="/register">Register</Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
