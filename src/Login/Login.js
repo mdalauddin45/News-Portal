@@ -4,14 +4,17 @@ import Form from "react-bootstrap/Form";
 import { AuthContext } from "../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { createUser } = useContext(AuthContext);
+  const { logInUser } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    createUser(email, password);
+    logInUser(email, password).then((result) => {
+      const user = result.user;
+      console.log(user).catch((error) => console.error(error));
+    });
   };
 
   return (
