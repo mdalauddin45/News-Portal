@@ -58,6 +58,8 @@ const Header = () => {
           <div className="d-lg-none">
             <LeftSideNav></LeftSideNav>
           </div>
+          <Link to="/login">Log in</Link>
+          <Link to="/register">Register</Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
