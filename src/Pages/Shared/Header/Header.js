@@ -44,7 +44,7 @@ const Header = () => {
           <Nav>
             <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
-              {user.photoURL ? (
+              {user?.photoURL ? (
                 <Image
                   style={{ height: "30px" }}
                   roundedCircle
