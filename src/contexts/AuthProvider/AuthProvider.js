@@ -55,6 +55,8 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  // veryfie email
+
   const authInfo = {
     user,
     googlLogInWithPopUp,
