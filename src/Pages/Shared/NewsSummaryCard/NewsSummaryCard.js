@@ -9,8 +9,10 @@ import {
   FaStarHalfAlt,
   FaEye,
 } from "react-icons/fa";
+import useTitle from "../../../Hook/useTitle";
 
 const NewsSummaryCard = ({ news }) => {
+  useTitle("category");
   //   console.log(news);
   const { title, details, image_url, total_view, _id, author, rating } = news;
   return (

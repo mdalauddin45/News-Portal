@@ -4,10 +4,11 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
+import useTitle from "../Hook/useTitle";
 
 const Register = () => {
   const [error, setError] = useState("");
-
+  useTitle("Register");
   const { createUser } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
